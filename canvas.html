@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ding-canvas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            vertical-align: top;
+        }
+        #draw {
+            border: 10px solid #A6DA62;
+        }
+        body {
+            display: flex;
+            justify-content: space-between;
+        }
+        #edit {
+            flex-grow: 1;
+            border: 5px solid green;
+            display: flex;
+            flex-direction:column;
+            justify-content: space-around;
+        }
+        #edit>section {
+            border: 1px solid red;
+        }
+        .crosshair {
+            cursor: crosshair;
+        }
+        .grabbing {
+            cursor: grabbing;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="draw"></canvas>
+    <div id="edit">
+        <section class="tool">
+            <span>工具</span>
+            <button class="paint">绘画</button>
+            <button class="earser">橡皮擦</button>
+            <button class="empty">清空</button>
+        </section>
+        <section class="shape">
+            <span>形状</span>
+            <div class="triangle">三角形</div>
+            <div class="rectangle">矩形</div>
+            <div class="circle">圆形</div>
+            <div class="sector">扇形</div>
+        </section>
+        <section class="lineWidth">
+            <span>粗细</span>
+            <div class="thin"></div>
+            <div class="middleThin"></div>
+            <div class="middleWide"></div>
+            <div class="wide"></div>
+        </section>
+        <section class="color">
+            <span>颜色</span>
+            <div class="red"></div>
+            <div class="yellow"></div>
+            <div class="orange"></div>
+            <div class="green"></div>
+            <div class="blue"></div>
+            <div class="pink"></div>
+        </section>
+        <section class="download">下载作品</section>
+    </div>
+    <script src="js/main.js"></script>
+    <!--<script src="js/removeEvent.js"></script>-->
+    <script src="js/tool.js"></script>
+    <script src="js/shape.js"></script>
+    <script>
+/*
+        ctx.beginPath(); // 开始路径绘制
+        ctx.moveTo(20, 20); // 设置路径起点，坐标为(20,20)
+        ctx.lineTo(200, 20); // 绘制一条到(200,20)的直线
+        ctx.lineTo(300, 200);
+        ctx.closePath()
+        ctx.lineWidth = 2.0; // 设置线宽 有默认值
+        ctx.lineCap = "butt"; //设置端点样式:butt(默认),round,square
+        ctx.lineJoin = "miter"; //设置连接样式:miter(默认),bevel,round
+        ctx.strokeStyle = 'red'; // 设置线的颜色
+        ctx.stroke(); // 进行线的着色，这时整条线才变得可见
+*/
+    </script>
+</body>
+</html>
