@@ -1,5 +1,5 @@
-## 在线画板
-
+## 在线画板  
+预览： https://dingchaofa.github.io/canvas/canvas.html
 #### 版本说明
 1. 目前只支持PC端使用  
 2. 后续持续更新中...
