@@ -1,0 +1,123 @@
+@font-face {
+    font-family: 'iconfont';  /* project id 307460 */
+    src: url('//at.alicdn.com/t/font_x90srpmmnu0izfr.eot');
+    src: url('//at.alicdn.com/t/font_x90srpmmnu0izfr.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_x90srpmmnu0izfr.woff') format('woff'),
+    url('//at.alicdn.com/t/font_x90srpmmnu0izfr.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_x90srpmmnu0izfr.svg#iconfont') format('svg');
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+#draw {
+    border: 10px solid #A6DA62;
+}
+#page {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'iconfont'
+}
+.crosshair {
+    cursor: crosshair;
+}
+.grabbing {
+    cursor: grabbing;
+}
+#edit {
+    flex-grow: 1;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+}
+#edit>section {
+    border-top: 1px solid #E2E3E4;
+    padding-top: 10px;
+}
+#edit {
+    background: #F5F6F7;
+    text-align: center;
+}
+section>div {
+    border: 1px solid;
+    line-height: 16px;
+    margin: 5px;
+    padding: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+section>div:hover {
+    background: #fff;
+}
+#edit section:first-of-type {
+    border: none;
+    padding-top: 0;
+}
+#edit>section:nth-child(4)>div {
+    border: none;
+}
+#edit>section:nth-child(4)>div:hover {
+    background: none;
+}
+#edit>section:nth-child(4)>.allColor>div:hover {
+    background: #fff;
+}
+.allColor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding:0;
+    cursor: default;
+}
+.allColor>div{
+    border: 1px solid #ccc;
+    padding: 3px;
+    margin: 3px;
+    cursor: pointer;
+}
+.backgroundColor {
+    background-color: #fff;
+}
+section>span {
+    display: inline-block;
+    /*padding-top: 1px;*/
+}
+#edit section:last-of-type {
+    margin: 0 2px;
+    padding: 10px;
+    animation: lastSection 3s infinite;
+    cursor: pointer;
+    /*box-shadow: 0 4px 0 3px #C4CECE;*/
+}
+#edit section:last-of-type:hover {
+    background-color: rgb(232,239,247);
+    /*box-shadow: 0 4px 0 3px #C4CECE;*/
+}
+#edit section:last-of-type:active {
+    background-color: rgb(165,183,183);
+}
+@keyframes lastSection {
+    0% {
+    box-shadow: 0 0 0 rgba(255, 67, 81, 0.3) inset;
+    }
+    50% {
+    box-shadow: 0 0 20px rgba(255, 67, 81, 0.8) inset;
+    }
+    100% {
+    box-shadow: 0 0 0 rgba(255, 67, 81, 0.3) inset;
+    }
+}
+
+/* 模态框 */
+#modul {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border: 1px solid #bbb;
+    box-shadow: 0 0 0 1000px rgba(0,0,0, 0.3);
+    padding: 10px 15px;
+}

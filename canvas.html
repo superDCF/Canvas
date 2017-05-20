@@ -4,77 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ding-canvas</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            vertical-align: top;
-        }
-        #draw {
-            border: 10px solid #A6DA62;
-        }
-        body {
-            display: flex;
-            justify-content: space-between;
-        }
-        #edit {
-            flex-grow: 1;
-            border: 5px solid green;
-            display: flex;
-            flex-direction:column;
-            justify-content: space-around;
-        }
-        #edit>section {
-            border: 1px solid red;
-        }
-        .crosshair {
-            cursor: crosshair;
-        }
-        .grabbing {
-            cursor: grabbing;
-        }
-    </style>
+    <title>canvas</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="page">
     <canvas id="draw"></canvas>
     <div id="edit">
         <section class="tool">
             <span>工具</span>
-            <button class="paint">绘画</button>
-            <button class="earser">橡皮擦</button>
-            <button class="empty">清空</button>
+            <div class="paint">绘画 &#xe665;</div>
+            <div class="earser">橡皮擦 &#xe77b;</div>
+            <div class="empty">清空 &#xe71a;</div>
         </section>
         <section class="shape">
             <span>形状</span>
-            <div class="triangle">三角形</div>
-            <div class="rectangle">矩形</div>
-            <div class="circle">圆形</div>
-            <div class="sector">扇形</div>
+            <div class="triangle">三角形 &#xe60f;</div>
+            <div class="rectangle">矩形 &#xe605;</div>
+            <div class="circle">圆形 &#xe933;</div>
+            <!--<div class="sector">扇形</div>-->
         </section>
         <section class="lineWidth">
             <span>粗细</span>
-            <div class="thin"></div>
-            <div class="middleThin"></div>
-            <div class="middleWide"></div>
-            <div class="wide"></div>
+            <div class="thin">细</div>
+            <div class="middleThin">中细</div>
+            <div class="middleWide">中粗</div>
+            <div class="wide">粗</div>
         </section>
         <section class="color">
             <span>颜色</span>
-            <div class="red"></div>
-            <div class="yellow"></div>
-            <div class="orange"></div>
-            <div class="green"></div>
-            <div class="blue"></div>
-            <div class="pink"></div>
+            <div class="allColor">
+                <div class="black">黑</div>
+                <div class="red">红</div>
+                <div class="orange">橙</div>
+                <div class="yellow">黄</div>
+                <div class="gray">灰</div>
+                <div class="green">绿</div>
+                <div class="blue">蓝</div>
+                <div class="pink">紫</div>
+            </div>
         </section>
-        <section class="download">下载作品</section>
+        <section class="download">下载作品 &#xe600;</section>
     </div>
+    </div>
+    <div id="modul"><span>关闭窗口之前，请确认已保存您的作品</span></div>
     <script src="js/main.js"></script>
     <!--<script src="js/removeEvent.js"></script>-->
     <script src="js/tool.js"></script>
     <script src="js/shape.js"></script>
+    <script src="js/lineWidth.js"></script>
+    <script src="js/color.js"></script>
     <script>
 /*
         ctx.beginPath(); // 开始路径绘制
@@ -88,6 +67,22 @@
         ctx.strokeStyle = 'red'; // 设置线的颜色
         ctx.stroke(); // 进行线的着色，这时整条线才变得可见
 */
+let download = document.getElementsByClassName('download')[0]
+download.addEventListener('click',function(){
+    creatAndDownload()
+})
+function creatAndDownload(){ //模拟下载事件
+    let a = document.createElement('a')
+        a.setAttribute('href',canvas.toDataURL())
+        a.setAttribute('download','mywork')
+    let event = new MouseEvent('click')
+    a.addEventListener('click',function(){
+        //console.log(123122)
+    })
+    a.dispatchEvent(event)
+    //a.click()  这种方式也可以
+}
+
     </script>
 </body>
 </html>
