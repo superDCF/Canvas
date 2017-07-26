@@ -34,3 +34,4 @@
 6. 注意beginPath的使用，即添加新路径
 7. 调用beforeunload事件，对于window.alert(), window.confirm(), 和 window.prompt() 的调用会被忽略。
 8. 利用webpack打包模块，由于现行代码量较少，打包反而增加解析负担。
+9. 2017.7.26
